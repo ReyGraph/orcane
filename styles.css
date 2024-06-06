@@ -1,0 +1,240 @@
+@import url('https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;500;600;700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Chakra+Petch:wght@300&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@200;300;400;500;600;700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Chakra+Petch:wght@300&family=Varela+Round&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Sacramento&display=swap');
+
+body, html {
+    margin: 0;
+    padding: 0;
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
+    font-family: 'Roboto', sans-serif;
+    background: #1a1a1a;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+/* Add curved edges to the image */
+.slide .content img {
+    max-width: 100%;
+    height: auto;
+    border-radius: 20px; /* Adjust the border radius to your preference */
+    margin-top: 20px; /* Add space between the image and the text */
+}
+
+/* Style the text content to avoid overlapping with the image */
+.slide .content .text-content {
+    margin-bottom: 20px; /* Add space at the bottom of the text content, this shit better fuckin work */
+} 
+
+
+
+nav{
+    position: fixed;
+    top: 0; /* Stick the navbar to the top */
+    background: #232222;
+    width: 100%;
+    padding: 10px 0;
+    z-index: 12;
+    justify-content: space-between;
+    align-items: center;
+}
+
+nav .menu{
+    max-width: 1250px;
+    margin: auto;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+  .menu .logo a{
+    text-decoration: none;
+    color: #fff;
+    font-size: 40px;
+    font-weight: 165;
+    font-family: 'Chakra Petch', sans-serif; 
+    
+}
+  .menu ul{
+    display: inline-flex;
+}
+  .menu ul li{
+    list-style: none;
+    margin-left: 5px;
+    font-family: 'Chakra Petch', sans-serif;
+}
+  .menu ul li:first-child{
+    margin-left: auto;
+}
+  .menu ul li a{
+    text-decoration: none;
+    color: #fff;
+    font-size: 18px;
+    font-weight: 500;
+    padding: 8px 15px; 
+    transition: all 0.3s ease;
+    font-family: 'Chakra Petch', sans-serif;
+}
+  .menu ul li a:hover{
+    background: #fff;
+    color: black;
+}
+
+#particles-js {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    z-index: 0;
+}
+
+.container {
+    width: 80%;
+    max-width: 1000px;
+    height: 80%;
+    max-height: 600px;
+    background: #282828;
+    border-radius: 20px;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5);
+    overflow: hidden;
+    position: relative;
+    z-index: 1;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.slides {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    overflow: hidden;
+}
+
+.slide {
+    width: 100%;
+    height: 100%;
+    padding: 40px;
+    box-sizing: border-box;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    transition: opacity 0.5s ease;
+    opacity: 0;
+    position: absolute;
+}
+
+.slide.active {
+    opacity: 1;
+}
+
+.content {
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.text-content {
+    color: #fff;
+    max-width: 50%;
+}
+
+.text-content h1 {
+    font-family: 'Playfair Display', serif;
+    font-size: 2.5rem;
+    margin: 0;
+    color: #ff7e5f;
+}
+
+.text-content h2 {
+    font-family: 'Playfair Display', serif;
+    font-size: 4rem;
+    margin: 10px 0;
+}
+
+.text-content p {
+    font-size: 1rem;
+    margin-top: 20px;
+    line-height: 1.6;
+}
+
+.art {
+    width: 200px;
+    height: 200px;
+    background: conic-gradient(from 180deg, #ff7e5f, #feb47b);
+    border-radius: 50%;
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.3);
+    animation: rotate 14.5s linear infinite;
+}
+
+
+.navigation {
+    position: absolute;
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    top: 50%;
+    transform: translateY(-50%);
+    padding: 0 20px;
+    box-sizing: border-box;
+    z-index: 2;
+}
+
+.arrow {
+    width: 0;
+    height: 0;
+    border-style: solid;
+    cursor: pointer;
+    transition: transform 0.3s;
+}
+
+.arrow.left {
+    border-width: 20px 30px 20px 0;
+    border-color: transparent #ff7e5f transparent transparent;
+}
+
+.arrow.right {
+    border-width: 20px 0 20px 30px;
+    border-color: transparent transparent transparent #ff7e5f;
+}
+
+.arrow:hover {
+    transform: scale(1.1);
+}
+
+@media (max-width: 768px) {
+    .content {
+        flex-direction: column;
+    }
+
+    .text-content {
+        max-width: 100%;
+        text-align: center;
+    }
+
+    .art {
+        margin-top: 20px;
+    }
+
+    .arrow.left {
+        left: 10px;
+    }
+
+    .arrow.right {
+        right: 10px;
+    }
+}
+
+@keyframes rotate {
+    0% {
+        transform: rotate(0deg);
+    }
+    100% {
+        transform: rotate(360deg);
+    }
+}
